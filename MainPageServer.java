@@ -14,9 +14,9 @@ import transaction.*;
 public class MainPageServer {
     public static void main(String[] args) throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        
+
         server.createContext("/", new HtmlHandler());
-        
+
         server.start();
         server.createContext("/insert_staff", new InsertStaffServer());
         server.createContext("/show_all_staff", new ShowAllStaffServer());
