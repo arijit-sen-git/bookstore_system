@@ -46,3 +46,9 @@ create table transactions (
     foreign key (book_id) references books(book_id),
     foreign key (staff_id) references staff(staff_id)
 );
+
+-- Unique book subject constraint --
+
+ALTER TABLE books
+ADD CONSTRAINT unique_book_name_subject
+UNIQUE (book_name, book_subject);
